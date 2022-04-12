@@ -21,9 +21,10 @@ class PostController extends Controller
 
         // mostra tutti i post + categoria abbinata -> ottimizzazione performance 
         // laravel risolve per noi la relazione con category
-        $posts = Post::with(['category'])->get();
+        // $posts = Post::with(['category'])->get();
 
-        $posts = Post::paginate(2);
+        // $posts = Post::paginate(2);
+        $posts = Post::with(['category', 'tags'])->paginate(2);
 
         // return con array di risposta
         return response()->json(
@@ -33,5 +34,22 @@ class PostController extends Controller
             ]
         );
     }
+
+    public function show($slug) {
+        $post = Post::where('slug', '=', $slug)->with(['category', 'tags'])->first();
+
+        if ($post) {
+            return response()->json([
+                'result'=> $post,
+                'success'=> true
+            ]);
+        } else {
+            return response()->json([
+                'result'=> 'Nessun risultato trovato',
+                'success'=> false
+            ]);
+        }
+    }
+
 
 }
