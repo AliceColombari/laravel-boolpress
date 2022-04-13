@@ -38,7 +38,7 @@
                 </div>
                 @endforeach
                 
-                <button type="submit" class="btn btn-primary">Salva</button>
+                <button type="submit" class="btn" style="background-color: #0073aa; color: #fff;">Salva</button>
               </form>
 
         </div>

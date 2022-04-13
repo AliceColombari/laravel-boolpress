@@ -23,7 +23,7 @@
                             <td>{{$tag->slug}}</td>
                            
                                 <td>
-                                    <a href="{{route('admin.tags.show', $tag->id)}}" class="btn btn-primary">Vedi</a>                                                         
+                                    <a href="{{route('admin.tags.show', $tag->id)}}" class="btn" style="background-color: #0073aa; color: #fff;">Vedi</a>                                                         
                                 </td>    
                             
                         </tr>

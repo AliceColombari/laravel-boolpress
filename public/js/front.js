@@ -2206,9 +2206,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "Main",
+  name: "Posts",
   components: {
     Post: _components_Post__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
@@ -2233,6 +2239,11 @@ __webpack_require__.r(__webpack_exports__);
         _this.posts = response.data.results.data;
         _this.lastPage = response.data.results.last_page;
       });
+    },
+    // funzione per visualizzare e rendere click numeri pagina
+    selectPage: function selectPage(_selectPage) {
+      this.currentPage = _selectPage;
+      this.getPosts(this.currentPage);
     }
   },
   created: function created() {
@@ -2470,7 +2481,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.container-title {\n  background-color: #0073aa;\n  color: #fff;\n  padding: 30px;\n}\n\n", ""]);
+exports.push([module.i, "\n.container-title {\n  background-color: #0073aa;\n  color: #fff;\n  padding: 30px;\n}\n.page-link {\n  color: #0073aa;\n}\n.page-item.active .page-link {\n  background-color: #0073aa;\n  border-color: #dee2e6;\n  font-weight: bold;\n}\n\n", ""]);
 
 // exports
 
@@ -4192,52 +4203,78 @@ var render = function () {
         0
       ),
       _vm._v(" "),
-      _c("nav", { attrs: { "aria-label": "Page navigation example" } }, [
-        _c("ul", { staticClass: "pagination mt-3" }, [
-          _c(
-            "li",
-            {
-              staticClass: "page-item",
-              class: _vm.currentPage == 1 ? "disabled" : "",
-            },
-            [
-              _c(
-                "span",
+      _c("nav", [
+        _c(
+          "ul",
+          { staticClass: "pagination mt-5 justify-content-center" },
+          [
+            _c(
+              "li",
+              {
+                staticClass: "page-item",
+                class: _vm.currentPage == 1 ? "disabled" : "",
+              },
+              [
+                _c(
+                  "span",
+                  {
+                    staticClass: "page-link",
+                    on: {
+                      click: function ($event) {
+                        return _vm.getPosts(_vm.currentPage - 1)
+                      },
+                    },
+                  },
+                  [_vm._v("Precedente")]
+                ),
+              ]
+            ),
+            _vm._v(" "),
+            _vm._l(_vm.lastPage, function (page) {
+              return _c(
+                "li",
                 {
-                  staticClass: "page-link",
+                  key: page,
+                  staticClass: "page-item",
+                  class: page == _vm.currentPage ? "active" : "",
                   on: {
                     click: function ($event) {
-                      return _vm.getPosts(_vm.currentPage - 1)
+                      return _vm.selectPage(page)
                     },
                   },
                 },
-                [_vm._v("Precedente")]
-              ),
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "li",
-            {
-              staticClass: "page-item",
-              class: _vm.currentPage == _vm.lastPage ? "disabled" : "",
-            },
-            [
-              _c(
-                "span",
-                {
-                  staticClass: "page-link",
-                  on: {
-                    click: function ($event) {
-                      return _vm.getPosts(_vm.currentPage + 1)
+                [
+                  _c("span", { staticClass: "page-link" }, [
+                    _vm._v(_vm._s(page)),
+                  ]),
+                ]
+              )
+            }),
+            _vm._v(" "),
+            _c(
+              "li",
+              {
+                staticClass: "page-item",
+                class: _vm.currentPage == _vm.lastPage ? "disabled" : "",
+              },
+              [
+                _c(
+                  "span",
+                  {
+                    staticClass: "page-link",
+                    on: {
+                      click: function ($event) {
+                        return _vm.getPosts(_vm.currentPage + 1)
+                      },
                     },
                   },
-                },
-                [_vm._v("Successivo")]
-              ),
-            ]
-          ),
-        ]),
+                  [_vm._v("Successivo")]
+                ),
+              ]
+            ),
+          ],
+          2
+        ),
       ]),
     ]),
   ])

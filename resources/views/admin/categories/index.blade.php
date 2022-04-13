@@ -23,7 +23,7 @@
                                 <td>{{$category->slug}}</td>
                               
                                 <td class="d-flex">
-                                    <a href="{{route('admin.categories.show', $category->id)}}" class="btn btn-primary">Vedi</a>
+                                    <a href="{{route('admin.categories.show', $category->id)}}" class="btn" style="background-color: #0073aa; color: #fff;">Vedi</a>
 
                                     @if ($category->id > 1)
                                         <a href="{{route('admin.categories.edit', $category->id)}}" class="btn btn-secondary mx-2">Modifica</a>

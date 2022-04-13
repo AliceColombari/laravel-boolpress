@@ -31,7 +31,7 @@
                     <textarea name="content" class="form-control" id="content" name="content" value="{{old('content')}}"></textarea>
                 </div>
                 
-                <button type="submit" class="btn btn-primary">Salva</button>
+                <button type="submit" class="btn" style="background-color: #0073aa; color: #fff;">Salva</button>
               </form>
 
         </div>

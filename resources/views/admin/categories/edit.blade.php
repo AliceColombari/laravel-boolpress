@@ -15,7 +15,7 @@
             <input type="text" class="form-control" id="name" name="name" value="{{old("name", $category->name)}}" required>
           </div>                
           
-          <button type="submit" class="btn btn-primary">Salva</button>
+          <button type="submit" class="btn" style="background-color: #0073aa; color: #fff;">Salva</button>
 
       </form>
 

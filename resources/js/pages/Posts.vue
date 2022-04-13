@@ -22,9 +22,15 @@
       </div>
 
       <!-- btn per visualizzare post precedente e successivo -->
-      <nav aria-label="Page navigation example">
-        <ul class="pagination mt-3">
+      <nav>
+        <ul class="pagination mt-5 justify-content-center">
             <li class="page-item" :class="(currentPage == 1)?'disabled':''" ><span class="page-link" @click="getPosts(currentPage - 1)">Precedente</span></li>
+
+            <!-- visualizzo numero di pagina -->
+            <li class="page-item" @click="selectPage(page)" :class="(page == currentPage) ? 'active' : ''" v-for="page in lastPage" :key="page">
+              <span class="page-link">{{page}}</span>
+            </li>
+
             <li class="page-item" :class="(currentPage == lastPage)?'disabled':''"><span class="page-link" @click="getPosts(currentPage + 1)">Successivo</span></li>
         </ul>
     </nav>
@@ -38,7 +44,7 @@
 import Post from '../components/Post';
 
 export default {
-  name: "Main",
+  name: "Posts",
   components: {
       Post
   },
@@ -64,6 +70,13 @@ export default {
       });
 
     },
+
+  // funzione per visualizzare e rendere click numeri pagina
+    selectPage(selectPage){
+      this.currentPage = selectPage;
+      this.getPosts(this.currentPage);
+    }
+
   },
 
   created() {
@@ -79,6 +92,16 @@ export default {
     background-color: #0073aa;
     color: #fff;
     padding: 30px;
+  }
+
+  .page-link {
+    color: #0073aa;
+  }
+
+  .page-item.active .page-link {
+    background-color: #0073aa;
+    border-color: #dee2e6;
+    font-weight: bold;
   }
 
 </style>

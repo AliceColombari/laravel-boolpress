@@ -19,7 +19,7 @@
                 @endforeach
             </div>
 
-            <a href="{{route('admin.posts.index')}}" class="btn btn-primary mt-3">Torna alla lista</a>
+            <a href="{{route('admin.posts.index')}}" class="btn mt-3" style="background-color: #0073aa; color: #fff;">Torna alla lista</a>
         </div>
     </div>
 </div>

@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
 
-            <a href="{{route('admin.posts.create')}}" class="mt-3 mb-3 btn btn-primary">Crea un post</a>
+            <a href="{{route('admin.posts.create')}}" class="mt-3 mb-3 btn" style="background-color: #0073aa; color: #fff;">Crea un post</a>
 
             <table class="table">
                 <thead>
@@ -29,7 +29,7 @@
                             {{-- risolto problema se utente non seleziona nessuna categoria --}}
                             <td>{{isset($post->category)?$post->category->name:'N.D.'}}</td>
                             <td class="d-flex justify-content-between">
-                                <a href="{{route('admin.posts.show', $post->id)}}" class="btn btn-primary">Vedi</a>
+                                <a href="{{route('admin.posts.show', $post->id)}}" class="btn" style="background-color: #0073aa; color: #fff;">Vedi</a>
                                 <a href="{{route('admin.posts.edit', $post->id)}}" class="btn btn-secondary">Modifica</a>
                                
                                 <form action="{{route('admin.posts.destroy', $post->id)}}" method="POST">
