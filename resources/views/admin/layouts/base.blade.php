@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm" style="padding: 20px;">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -38,6 +38,17 @@
                         <li class="mx-2"><a href="{{route('admin.categories.index')}}">Categorie</a></li>
                         <li class="mx-2"><a href="{{route('admin.tags.index')}}">Tag</a></li>
                     </ul>
+
+                    {{-- stile per link nav --}}
+                    <style>
+                        a {
+                            color: #fff;
+                        }
+
+                        a:hover {
+                            color: grey;
+                        }
+                    </style>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
