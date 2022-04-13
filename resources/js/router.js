@@ -8,6 +8,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Posts from './pages/Posts';
 import SinglePost from './pages/SinglePost';
+import NotFound from './pages/NotFound';
 
 const router = new VueRouter({
     mode: "history",
@@ -28,16 +29,22 @@ const router = new VueRouter({
             component: Contact
         },
         {
-            path: '/posts',
-            name: 'posts',
+            path: '/blog',
+            name: 'blog',
             component: Posts
         },
         {
             // indico così parte dinamica
-            path: '/posts/:slug',
+            path: '/blog/:slug', // equivale a Laravel Route::get('/posts({slug}', 'Api\PostController@show)
             name: 'single-post',
             // creo singolo in pages
             component: SinglePost
+        },
+        {
+            // prendi qualsiasi cosa ci sia
+            path: '/:pathMatch(.*)*', // path: '/*', 
+            name: 'not-found',
+            component: NotFound
         }
     ]
 });

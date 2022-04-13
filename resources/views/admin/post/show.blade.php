@@ -11,7 +11,7 @@
             <div><strong>Slug: </strong>{{$post->slug}}</div>
             <div><strong>Categoria: </strong> {{$post->category->name}}</div>
 
-            <div style="color: blue;"><strong>Il post è stato scritto</strong> {{$diffInDays}} giorni fa</div>
+            {{-- <div><strong>Il post è stato scritto</strong> {{$diffInDays}} giorni fa</div> --}}
             
             <div>
                 @foreach ($post->tags as $tag)

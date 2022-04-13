@@ -35,8 +35,13 @@ class PostController extends Controller
         );
     }
 
+    // voglio post con quel determinato parametro passato
+    // cerco quel post con quello slug unico specifico
+    // se post è trovato ritorno json di risposta con array all'interno che conterrà valore post
+    // se post non è definito, non lo trova, backend ritorna un json con array di nessun risultato
+    
     public function show($slug) {
-        $post = Post::where('slug', '=', $slug)->with(['category', 'tags'])->first();
+        $post = Post::where('slug', $slug)->with(['category', 'tags'])->first();
 
         if ($post) {
             return response()->json([

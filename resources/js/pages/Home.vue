@@ -1,7 +1,7 @@
 <template>
-<div class="container">
+<div class="container text-center mt-5">
   <h1>
-      Benvenuto nel Blog di Boolpress!
+      Benvenuto in Boolpress!
   </h1>
 </div>
   
@@ -14,5 +14,7 @@ export default {
 </script>
 
 <style>
-
+  h1 {
+    font-size: 50px;
+  }
 </style>
