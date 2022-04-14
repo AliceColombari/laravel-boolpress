@@ -2020,10 +2020,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Post',
   // tramite props richiamo elementi che voglio visuaizzare quando vado al click su 'vedi articolo completo'
-  props: ['title', 'content', 'slug', 'category', 'tags'],
+  props: ['img', 'title', 'content', 'slug', 'category', 'tags'],
   data: function data() {
     return {
       strTruncateLen: 50
@@ -2212,6 +2216,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Posts",
@@ -2262,6 +2269,9 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
 //
 //
 //
@@ -3970,6 +3980,11 @@ var render = function () {
       [
         _c("h2", { staticClass: "card-title" }, [_vm._v(_vm._s(_vm.title))]),
         _vm._v(" "),
+        _c("img", {
+          staticClass: "img-fluid mt-3 mb-3",
+          attrs: { src: _vm.img, alt: "title" },
+        }),
+        _vm._v(" "),
         _c("h4", { staticClass: "card-text" }, [
           _vm._v(_vm._s(_vm.category ? _vm.category.name : " ")),
         ]),
@@ -4194,6 +4209,7 @@ var render = function () {
                   slug: post.slug,
                   category: post.category,
                   tags: post.tags,
+                  img: post.cover,
                 },
               }),
             ],
@@ -4309,6 +4325,11 @@ var render = function () {
               "div",
               [
                 _c("h1", [_vm._v(_vm._s(_vm.post.title))]),
+                _vm._v(" "),
+                _c("img", {
+                  staticClass: "img-fluid mt-3 mb-3",
+                  attrs: { src: _vm.post.cover, alt: _vm.post.title },
+                }),
                 _vm._v(" "),
                 _vm.post.category
                   ? _c("h3", [

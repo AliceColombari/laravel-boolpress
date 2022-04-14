@@ -6,7 +6,18 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <h1>Visualiazza post</h1>
-            <div><strong>Titolo: </strong>{{$post->title}}</div>
+
+
+            {{-- aggiunta per visualizzare image --}}
+            @if ($post->cover)
+                <img class="img-fluid mt-3 mb-3" src="{{asset('storage/' . $post->cover)}}" alt="{{$post->title}}">
+            @else
+                <img class="img-fluid mt-3 mb-3" src="{{asset('img/error.png')}}" alt="{{$post->title}}">
+            @endif
+
+
+
+            <h3><strong>Titolo: </strong>{{$post->title}}</h3>
             <div><strong>Contenuto: </strong>{!! $post->content !!}</div>
             <div><strong>Slug: </strong>{{$post->slug}}</div>
             <div><strong>Categoria: </strong> {{$post->category->name}}</div>

@@ -25,6 +25,21 @@ class PostController extends Controller
 
         // $posts = Post::paginate(2);
         $posts = Post::with(['category', 'tags'])->paginate(2);
+        
+
+
+        //ciclare post - entrare nel campo cover e impostare cover come path assoluta e non relativa
+        // puntare quel determinato file
+        $posts->each(function($post) {
+            if($post->cover) {
+                $post->cover = url('storage/'. $post->cover);
+            } else {
+                $post->cover = url('img/error.png');
+            }
+        });
+
+
+
 
         // return con array di risposta
         return response()->json(
@@ -42,6 +57,13 @@ class PostController extends Controller
     
     public function show($slug) {
         $post = Post::where('slug', $slug)->with(['category', 'tags'])->first();
+
+        // condizione di verifica dell'image in upload
+        if($post->cover) {
+            $post->cover = url('storage/'. $post->cover);
+        } else {
+            $post->cover = url('img/error.png');
+        }
 
         if ($post) {
             return response()->json([

@@ -13,8 +13,16 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DRIVER', 'local'),
 
+
+
+    // cambio valore da 'local' a 'public' come primo passaggio per upload file 
+    'default' => env('FILESYSTEM_DRIVER', 'public'),
+
+
+
+
+    
     /*
     |--------------------------------------------------------------------------
     | Default Cloud Filesystem Disk

@@ -2,6 +2,10 @@
     <div class="card">
         <div class="card-body">
             <h2 class="card-title">{{ title }}</h2>
+
+            <!-- aggiungo tag img per visualizzare image in upload -->
+             <img class="img-fluid mt-3 mb-3" :src="img" alt="title">
+
             <h4 class="card-text">{{ category?category.name:'&nbsp;'}}</h4>
             <!-- tronco il testo del contenuto del mio post ad un tot di parole -->
             <p class="card-text">{{ truncateText(content) }}</p>
@@ -14,7 +18,7 @@
 export default {
     name: 'Post',
     // tramite props richiamo elementi che voglio visuaizzare quando vado al click su 'vedi articolo completo'
-    props: ['title', 'content', 'slug', 'category', 'tags'],
+    props: ['img', 'title', 'content', 'slug', 'category', 'tags'],
 
     data() {
         return {

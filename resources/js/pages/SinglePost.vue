@@ -5,8 +5,11 @@
     <div class="row">
       <div class="col-12">
           <div v-if="post">
+
             <!-- se post definito mi metti -->
             <h1>{{post.title}}</h1>
+
+            <img class="img-fluid mt-3 mb-3" :src="post.cover" :alt="post.title">
 
             <h3 v-if="post.category">Categoria: {{post.category.name}}</h3>
 

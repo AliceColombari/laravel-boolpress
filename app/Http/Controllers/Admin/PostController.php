@@ -10,6 +10,7 @@ use App\Tag;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 use Doctrine\Inflector\Rules\Word;
+use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
 {
@@ -53,14 +54,30 @@ class PostController extends Controller
                 'title'=>'required|min:5',
                 'content'=>'required|min:10',
                 'category_id' => 'nullable|exists:categories,id',
-                'tags' => 'nullable|exists:tags,id'
+                'tags' => 'nullable|exists:tags,id',
+
+                'image' => 'nullable|image|max:2048'
             ]
         );
 
             // TITOLO: Lavoro futuro
             // SLUG: lavoro-futuro
 
+            // tutti i dati richiesti dentro data
             $data = $request->all();
+
+            // importo per fare upload file 
+            // ho il percorso completo dato da post cover e il nome dell'image salvata
+            // Storage::put -> non tiene traccia del nome originale ma un hash 
+            // - sequenza alfanumerica di caratteri e lettere che identificano il file in maniera univoca
+            if(isset($data['image'])) {
+                $cover_path = Storage::put('post_covers', $data['image']);
+                $data['cover'] = $cover_path;
+            }
+            
+
+
+
             $slug = Str::slug($data['title']);
 
             
@@ -134,11 +151,23 @@ class PostController extends Controller
             [
                 'title'=>'required|min:5',
                 'content'=>'required|min:10',
-                'category_id' => 'nullable|exists:categories,id'
+                'category_id' => 'nullable|exists:categories,id',
+                'image' => 'nullable|image|max:2048'
             ]
             );
 
             $data = $request->all();
+
+            if(isset($data['image'])) {
+
+                if($post->cover) {
+                    Storage::delete($post->cover);
+                }
+                
+                $cover_path = Storage::put('post_covers', $data['image']);
+                $data['cover'] = $cover_path;
+            }
+            
             $slug = Str::slug($data['title']);
 
             if ($post->slug != $slug) {
@@ -169,6 +198,12 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        // eliminare la foto in upload
+        if($post->cover) {
+            Storage::delete($post->cover);
+        }
+        
+
         // Eliminazione post
         // cancellazione elemento su db
         $post->delete();

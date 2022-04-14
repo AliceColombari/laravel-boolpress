@@ -8,11 +8,28 @@
 
             <h1>Modifica post</h1>
 
-            <form method="POST" action="{{route('admin.posts.update', $post->id)}}">
+            <form method="POST" action="{{route('admin.posts.update', $post->id)}}" enctype="multipart/form-data">
                 
                 @csrf
                 @method('PUT')
 
+
+
+                {{-- anteprima foto attuale --}}
+                {{-- aggiunta per visualizzare image --}}
+                @if ($post->cover)
+                    <p>Immagine attuale</p>
+                    <img class="img-fluid mt-3 mb-3" src="{{asset('storage/' . $post->cover)}}" alt="{{$post->title}}">
+                @endif
+
+                 {{-- per invio file - collegamento per upload --}}
+                 <div class="form-group">
+                    <label for="image">Carica nuova immagine di copertina</label>
+                    <input class="form-control" type="file" name="image" id="image"  style="padding:10px; height: 50px;">
+                </div>
+
+
+                
                 <div class="form-group">
                     <label for="category_id">Categoria</label>
                     <select class="form-control" id="category_id" name="category_id">

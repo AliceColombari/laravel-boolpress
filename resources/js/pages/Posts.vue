@@ -10,12 +10,15 @@
         <div class="col-6" v-for="post in posts" :key="post.id">
 
           <!-- ciclo i post e li collego tramite l'utilizzo di props -  elementi che voglio visualizzare -->
+          <!-- infine aggiungo collegamento props per image upload -->
             <Post
                 :title='post.title'
                 :content='post.content'
                 :slug='post.slug'
                 :category='post.category'
                 :tags='post.tags'
+                
+                :img='post.cover'
             />
 
         </div>
