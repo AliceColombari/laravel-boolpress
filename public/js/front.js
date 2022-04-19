@@ -1921,6 +1921,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'Footer'
 });
@@ -2449,7 +2474,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card.text-center {\n  background-color: #343a40;\n  color: #fff;\n}\n", ""]);
+exports.push([module.i, "\nfooter {\n  margin: 0 auto;\n}\n.spacer {\n  height: 20px;\n}\n.social {\n  padding: 10px;\n  text-align: center;\n}\n.img_size {\n  height: 20px;\n  filter: invert(100%);\n}\n.text {\n  padding: 10px 0px 10px 0px;\n}\n.center {\n  padding: 10px;\n  border-top: 1px solid #C9C9C9;\n  width: 90%;\n  margin: auto;\n}\n.bg {\n  background-color: #343a40;\n}\n", ""]);
 
 // exports
 
@@ -3915,15 +3940,241 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mt-5 fixed-bottom footer" }, [
-      _c("div", { staticClass: "card text-center" }, [
-        _c("div", { staticClass: "card-body" }, [
-          _c("h5", { staticClass: "card-title" }, [_vm._v("Boolpress.org")]),
+    return _c("footer", { staticClass: "mt-5 fixed-bottom bg" }, [
+      _c("div", [
+        _c("div", { staticClass: "spacer" }),
+        _vm._v(" "),
+        _c("div", { staticClass: "social" }, [
+          _c(
+            "span",
+            { staticClass: "icon", staticStyle: { padding: "0 10px 0 10px" } },
+            [
+              _c("a", { attrs: { href: "https://www.facebook.com/" } }, [
+                _c("img", {
+                  staticClass: "img_size",
+                  attrs: {
+                    alt: "Facebook",
+                    src: "https://cdn-icons-png.flaticon.com/512/59/59439.png",
+                    title: "Facebook",
+                  },
+                }),
+              ]),
+            ]
+          ),
           _vm._v(" "),
-          _c("p", { staticClass: "card-text" }, [
-            _vm._v(
-              "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias expedita officia ullam odio quo minima, distinctio consectetur veritatis nemo nihil illum facere sunt enim exercitationem voluptate architecto reprehenderit magni eaque?"
-            ),
+          _c(
+            "span",
+            { staticClass: "icon", staticStyle: { padding: "0 10px 0 10px" } },
+            [
+              _c("a", { attrs: { href: "https://twitter.com/" } }, [
+                _c("img", {
+                  staticClass: "img_size",
+                  attrs: {
+                    alt: "Twitter",
+                    src: "https://cdn-icons-png.flaticon.com/512/1384/1384033.png",
+                    title: "Twitter",
+                  },
+                }),
+              ]),
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "span",
+            { staticClass: "icon", staticStyle: { padding: "0 10px 0 10px" } },
+            [
+              _c("a", { attrs: { href: "https://instagram.com/" } }, [
+                _c("img", {
+                  staticClass: "img_size",
+                  attrs: {
+                    alt: "Instagram",
+                    src: "https://cdn1.iconfinder.com/data/icons/ios-11-glyphs/30/instagram-512.png",
+                    title: "Instagram",
+                  },
+                }),
+              ]),
+            ]
+          ),
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "text" }, [
+          _c(
+            "div",
+            {
+              staticClass: "text-content",
+              staticStyle: {
+                "line-height": "150%",
+                "font-size": "12px",
+                color: "#fff",
+                "font-family": "inherit",
+              },
+            },
+            [
+              _c(
+                "p",
+                {
+                  staticStyle: {
+                    "font-size": "14px",
+                    "line-height": "21px",
+                    "text-align": "center",
+                    "letter-spacing": "2px",
+                  },
+                },
+                [
+                  _c(
+                    "span",
+                    {
+                      staticStyle: {
+                        "font-size": "14px",
+                        "line-height": "21px",
+                      },
+                    },
+                    [_vm._v("www.boolpress.com")]
+                  ),
+                ]
+              ),
+            ]
+          ),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "center",
+            staticStyle: { "border-top": "1px solid #C9C9C9", width: "90%" },
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-12" }, [
+            _c("div", { staticClass: "text" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "text-content",
+                  staticStyle: {
+                    "line-height": "150%",
+                    "font-size": "12px",
+                    "font-family": "inherit",
+                    color: "#afafaf",
+                  },
+                },
+                [
+                  _c(
+                    "p",
+                    {
+                      staticStyle: {
+                        "font-size": "10px",
+                        "line-height": "15px",
+                        "text-align": "center",
+                      },
+                    },
+                    [
+                      _c(
+                        "span",
+                        {
+                          staticStyle: {
+                            "font-size": "10px",
+                            "line-height": "15px",
+                          },
+                        },
+                        [
+                          _vm._v(
+                            "If you have questions regarding your data, please visit our "
+                          ),
+                          _c(
+                            "a",
+                            {
+                              staticStyle: {
+                                "text-decoration": "underline",
+                                color: "#0073aa",
+                              },
+                              attrs: {
+                                href: "http://www.example.com",
+                                rel: "noopener",
+                                target: "_blank",
+                              },
+                            },
+                            [_vm._v("Privacy Policy")]
+                          ),
+                        ]
+                      ),
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "p",
+                    {
+                      staticStyle: {
+                        "font-size": "10px",
+                        "line-height": "15px",
+                        "text-align": "center",
+                      },
+                    },
+                    [
+                      _c(
+                        "span",
+                        {
+                          staticStyle: {
+                            "font-size": "10px",
+                            "line-height": "15px",
+                          },
+                        },
+                        [
+                          _c(
+                            "span",
+                            { staticStyle: { "line-height": "18px" } },
+                            [
+                              _c(
+                                "span",
+                                { staticStyle: { "line-height": "18px" } },
+                                [
+                                  _vm._v(
+                                    "Want to change how you receive these emails? You can "
+                                  ),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticStyle: {
+                                        "text-decoration": "underline",
+                                        color: "#0073aa",
+                                      },
+                                      attrs: {
+                                        href: "http://www.example.com",
+                                        rel: "noopener",
+                                        target: "_blank",
+                                      },
+                                    },
+                                    [_vm._v("update your preferences")]
+                                  ),
+                                  _vm._v(" or "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticStyle: {
+                                        "text-decoration": "underline",
+                                        color: "#0073aa",
+                                      },
+                                      attrs: {
+                                        href: "http://www.example.com",
+                                        rel: "noopener",
+                                        target: "_blank",
+                                      },
+                                    },
+                                    [_vm._v("unsubscribe")]
+                                  ),
+                                  _vm._v(" from this list. "),
+                                ]
+                              ),
+                            ]
+                          ),
+                          _c(
+                            "span",
+                            { staticStyle: { "line-height": "18px" } },
+                            [_vm._v("© 2022 Company. All Rights Reserved.")]
+                          ),
+                        ]
+                      ),
+                    ]
+                  ),
+                ]
+              ),
+            ]),
           ]),
         ]),
       ]),
