@@ -11,3 +11,6 @@ Route::get('/posts', 'Api\PostController@index');
 
 // /api/posts/*
 Route::get('/posts/{slug}', 'Api\PostController@show');
+
+// /api/contacts
+Route::post('/contacts', 'Api\ContactController@store');
