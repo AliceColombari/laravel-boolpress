@@ -37,6 +37,9 @@ class NewContact extends Mailable
      */
     public function build()
     {
+        // risposta email a chi mi ha contattata
+        return $this->replyTo($this->lead->email);
+        
         return $this->view('emails.new-contact');
     }
 }
